@@ -34,7 +34,6 @@ def generate_motivation_card(emotion: str = None) -> str:
         if hasattr(response, "text") and response.text:
             return response.text.strip()
 
-        # Alternatif olarak parçalı içerikten alma
         elif hasattr(response, "candidates"):
             return response.candidates[0].content.parts[0].text.strip()
 
