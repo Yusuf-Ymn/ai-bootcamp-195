@@ -104,3 +104,25 @@ def generate_personal_recommendation_v3(
         return response.text.strip()
     except Exception:
         return "Bugün yorucu geçmiş ama küçük adımlar büyük fark yaratır. Kendine iyi bak! 🌟"
+
+
+
+def generate_motivation_card(emotion: str) -> str:
+    model = genai.GenerativeModel(model_name="gemini-1.5-flash")
+    prompt = f"""
+Kullanıcının ruh hali: {emotion}
+
+Kullanıcının ruh hâline uygun, motive edici ve pozitif bir olumlama mesajı yaz. 
+Mesaj 1-3 cümle uzunluğunda olsun. Arkadaşça, samimi ve umut verici bir ton kullan.
+İçerikte emoji kullanabilirsin. Ama çok uzatma.
+
+Örnekler:
+- "Unutma, kötü hissettiğin günler geçici. Sen güçlüsün 💪"
+- "Bugün zor olabilir ama sen bunun da üstesinden gelebilirsin 🌈"
+- "Her yeni gün yeni bir başlangıç. Hadi başla! ☀️"
+
+Sadece mesajı üret, başka bir açıklama verme.
+"""
+
+    response = model.generate_content(prompt)
+    return response.text.strip()
