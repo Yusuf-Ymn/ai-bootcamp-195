@@ -166,3 +166,91 @@ Duygularımızın, uyku / su / ekran süresi gibi **günlük mikro alışkanlık
 
 ```
 ```
+# 📌 Sprint 2 Raporu
+## 1 | Sprint Notları
+
+Sprint 1 sonrası takım olarak ciddi bir yeniden organizasyon süreci geçirdik. Takım üyeleriyle aktif iletişim kurularak görev paylaşımı yapıldı ve günlük scruma geçildi. Frontend geliştirilmeye başlandı, taslak bir arayüz oluşturuldu. Kullanıcıdan gelen veri ve kullanıcı deneyimi geri bildirimlerine göre hem backend hem frontend tarafında çeşitli iyileştirmelere gidildi. Ayrıca projeye grafiksel analiz ve kullanıcı girişi (authentication) gibi yeni özellikler eklendi. Bu sprintte Gemini LLM aktif olarak kullanıldı ve yapay zekâ unsuru güçlendirildi.
+
+## 2 | Daily Scrum
+
+Yazılı günlük iletişim ise WhatsApp grubumuzda yürütüldü. Aşağıda ekran görüntüsü ile örnekler verilmiştir:
+
+## 3 | Sprint Board (Jira Screenshot)
+<img width="1541" height="809" alt="Image" src="https://github.com/user-attachments/assets/0454230c-65d6-42c2-a2ca-d6ff03bdb7e1" />
+## 4 | Ürün Durumu: Ekran Görüntüleri
+<img width="1600" height="768" alt="Image" src="https://github.com/user-attachments/assets/1e6a1af8-57b5-4f61-8732-c0db0ecab742" />
+
+https://github.com/user-attachments/assets/3f149bd8-cd64-4108-9258-db6af355ae7d 
+## 👥 5 | Takım ve Katkı Özeti
+
+| İsim                   | Rol                         | Sprint 2 Katkısı                                           |
+|------------------------|-----------------------------|------------------------------------------------------------|
+| Yusuf Yaman           | Product Owner · Backend & AI | Kod inceleme, altyapı bakımı, raporlamalar                 |
+| Ahmet Taha Kartal     | Scrum Master · Backend       | Veri analizi denemeleri, Sağlık sebebiyle sınırlı katılım  |
+| Muhammed Sefa Akyüz   | Developer (Data)             | Veri analizi denemeleri — Sprint 3’e ertelendi             |
+| Dilara Dereli         | Developer (Frontend)         | Arayüz prototipi (HTML + Tailwind), fetch entegrasyonu     |
+| Abdullah Güven        | Developer (UI)               | Tasarım geri bildirimleri (Figma notları)                  |
+
+> ⚠️ Gözlem: Yaz dönemi staj programları ve kişisel seyahatler nedeniyle takım üyeleri projeye sınırlı zaman ayırabildi. Scrum ritüelleri tam oturtulamadı. Sprint 3’te bu eksikliklerin giderilmesi hedeflenmektedir.
+
+---
+
+## 🎯 6 | Sprint 2 Review
+
+| Hedef                        | Durum        | Açıklama                                                   |
+|-----------------------------|--------------|------------------------------------------------------------|
+| Web arayüzü iskeleti        | ✅ Tamamlandı | `index.html`, `history.html`, `card.html` hazırlandı        |
+| API ↔︎ UI entegrasyonu       | ✅ Tamamlandı | `script.js`, `history.js`, `card.js` ile fetch bağlantısı kuruldu |
+| `/summaries/{user_id}` endpoint’i | ✅ Tamamlandı | Geçmiş özet verilerine erişim sağlandı                     |
+| Kullanıcı giriş altyapısı   | 🚫 Eksik      | Sprint planında olmasına rağmen henüz uygulanmadı          |
+| Birim test altyapısı        | 🔄 Devam Ediyor | `pytest` şablonu hazırlandı                                |
+| Docker & CI yapılandırması | ⏳ Planlandı  | Sprint 3 backlog'una alındı                                |
+
+---
+
+## 🛠️ 7 | Teknik Kazanımlar
+
+- 🎨 **Tailwind CSS** ile sade, responsive arayüz tasarlandı  
+- 🔐 **CORS Orta Katmanı** eklendi – frontend erişim sorunları çözüldü  
+- 📄 **Yeni Endpoint**: `/summaries/{user_id}` ile kullanıcı geçmişi getirilebiliyor
+
+---
+
+## 🚧 8 | Sprint Retrospective
+
+| Sorun                          | Etki                  | Alınan Aksiyon                                   |
+|-------------------------------|-----------------------|--------------------------------------------------|
+| Yaz dönemi staj / seyahat     | Katılım dalgalı       | Haftalık sabit toplantı saati tanımlandı         |
+| İletişim gecikmeleri          | PR süresi uzadı       | GitHub Projects ve Discord düzenli kullanıldı    |
+| UI kapsamının artması         | Planlama kayması      | "Fonksiyon önce, görsel sonra" prensibi benimsendi |
+| UI eksikliği geri bildirimi   | Kullanıcı memnuniyeti düşük | Arayüz prototipleri Sprint 3'te genişletilecek  |
+
+---
+
+## 📦 9 | Sprint 2 Backlog Durumu (55 / 80 SP)
+
+| #  | Görev                         | SP | Durum     |
+|----|-------------------------------|----|-----------|
+| 1  | Tailwind arayüz iskeleti      | 13 | ✅         |
+| 2  | API entegrasyonu              | 8  | ✅         |
+| 3  | Geçmiş sayfası kartları       | 5  | ✅         |
+| 4  | Motivasyon kart animasyonu    | 5  | ✅         |
+| 5  | `/summaries` endpoint’i       | 8  | ✅         |
+| 6  | Birim test şablonu            | 8  | 🔄 Devam   |
+| 7  | Dockerfile & CI               | 5  | ⏳ Planlandı |
+| 8  | Scrum toplantıları            | 3  | ❌ Yapılamadı |
+| **Toplam**                         | 80 | **55 SP**  |
+
+---
+
+## 📌 10 | Sonraki Sprint Odakları
+
+1. ✅ Kullanıcı giriş altyapısının tamamlanması (`JWT` tabanlı auth)
+2. 📊 Trend panosu (Plotly ile duygu / metrik grafikleri)
+3. 🧪 Birim testlerin genişletilmesi (endpoint güvenliği)
+4. 🐳 Dockerfile ve CI/CD kurulumu
+5. 🧑‍🤝‍🧑 Scrum seremonilerinin düzenli şekilde oturtulması
+
+---
+*Hazırlayan : ****Yusuf Yaman**** & ****Ahmet Taha Kartal****
+🗓️ **Tarih:** 20 Temmuz 2025
