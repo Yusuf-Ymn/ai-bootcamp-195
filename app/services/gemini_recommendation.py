@@ -106,7 +106,7 @@ def generate_personal_recommendation_v3(
         return "Bugün yorucu geçmiş ama küçük adımlar büyük fark yaratır. Kendine iyi bak! 🌟"
 
 
-
+##KULLANILMIYOR GIBI
 def generate_motivation_card(emotion: str) -> str:
     model = genai.GenerativeModel(model_name="gemini-1.5-flash")
     prompt = f"""
