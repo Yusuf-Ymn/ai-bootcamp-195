@@ -174,6 +174,16 @@ Sprint 1 sonrası takım olarak ciddi bir yeniden organizasyon süreci geçirdik
 ## 2 | Daily Scrum
 
 Yazılı günlük iletişim ise WhatsApp grubumuzda yürütüldü. Aşağıda ekran görüntüsü ile örnekler verilmiştir:
+<img width="643" height="828" alt="Image" src="https://github.com/user-attachments/assets/218d994d-1ed1-426b-ae2b-93d427cc1ab4" />
+
+<img width="720" height="1320" alt="Image" src="https://github.com/user-attachments/assets/83f8c07f-c1dd-4012-a7f3-42d30dfc7023" />
+
+<img width="720" height="1226" alt="Image" src="https://github.com/user-attachments/assets/35ccc2dc-b2fe-4014-9d6b-2a1457d83869" />
+
+
+<img width="720" height="1443" alt="Image" src="https://github.com/user-attachments/assets/e56d6986-fbdd-4e78-9bf2-42eb5c6a5abf" />
+
+
 
 ## 3 | Sprint Board (Jira Screenshot)
 <img width="1541" height="809" alt="Image" src="https://github.com/user-attachments/assets/0454230c-65d6-42c2-a2ca-d6ff03bdb7e1" />
