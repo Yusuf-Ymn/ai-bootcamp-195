@@ -3,91 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MentalAI+ Günlük Girişi</title>
+    <title>MentalAI+ | Duygu Günlüğü ve Kişisel Koç</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=1.3">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=1.9">
 </head>
-<body class="bg-gray-50 text-gray-800 pt-20">
+<body class="bg-gray-50 text-gray-800">
 
-    <header class="bg-white shadow-md fixed top-0 left-0 right-0 z-10">
-        <nav class="container mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-bold text-blue-800">MentalAI+</a>
-            <div class="flex space-x-4 md:space-x-6">
-                <a href="index.html" class="nav-link active">🏠 Ana Sayfa</a>
-                <a href="history.html" class="nav-link">🗓️ Geçmişim</a>
-                <a href="card.html" class="nav-link">🃏 Kart Çek</a>
+    <!-- Navigasyon Menüsü Yer Tutucusu -->
+    <div id="navbar-placeholder"></div>
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MentalAI+ | Duygu Günlüğü ve Kişisel Koç</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2.2">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigasyon Menüsü Yer Tutucusu -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Görselle Zenginleştirilmiş Hero Bölümü -->
+    <section class="hero-section">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-center md:space-x-12">
+                <!-- Sol Taraf: Metin -->
+                <div class="md:w-6/12 lg:w-5/12 text-center md:text-left">
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight bg-gradient-to-r from-blue-600 to-indigo-800 text-transparent bg-clip-text">
+                        Duygularını Anla, <br> Alışkanlıklarını Şekillendir.
+                    </h1>
+                    <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-xl mx-auto md:mx-0">
+                        MentalAI+, yapay zekâ destekli duygu günlüğün, kişisel koçun ve motivasyon arkadaşındır. Her gün nasıl hissettiğini yaz, gerisini bize bırak.
+                    </p>
+                    <a href="#diary-form-section" id="start-button" class="cta-button mt-10 inline-block bg-blue-600 text-white font-bold text-lg py-4 px-8 rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105">
+                        Günlüğünü Yazmaya Başla
+                    </a>
+                </div>
+                <!-- Sağ Taraf: Görsel -->
+                <div class="md:w-5/12 lg:w-4/12 mt-12 md:mt-0">
+                    <div class="hero-illustration">
+                        <!-- YENİ: Elle Çizilmiş ve 6'ya Bölünmüş Duygu Çarkı -->
+                        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="grad-bg-wheel" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#f0f9ff;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#e0e7ff;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Arkaplan Dairesi -->
+                            <circle cx="200" cy="200" r="198" fill="url(#grad-bg-wheel)"/>
+
+                            <!-- Dilim Çizgileri (30 derece döndürülmüş) -->
+                            <g stroke="#a5b4fc" stroke-width="2.5" stroke-linecap="round" opacity="0.7" transform="rotate(30, 200, 200)">
+                                <path d="M 200 2 L 200 398" />
+                                <path d="M 29 100 L 371 300" />
+                                <path d="M 29 300 L 371 100" />
+                            </g>
+
+                            <!-- Emojiler (Düzenli Çark) -->
+                            <!-- Happy (Mutlu) -->
+                            <g transform="translate(175, 45)">
+                                <circle cx="25" cy="25" r="24" fill="#fef08a" />
+                                <circle cx="16" cy="20" r="2.5" fill="#4a5568"/>
+                                <circle cx="34" cy="20" r="2.5" fill="#4a5568"/>
+                                <path d="M 16 32 A 10 10 0 0 0 34 32" fill="none" stroke="#4a5568" stroke-width="2.5" stroke-linecap="round"/>
+                            </g>
+
+                            <!-- Love (Aşık) -->
+                             <g transform="translate(285, 115)">
+                                <circle cx="25" cy="25" r="24" fill="#fbcfe8" />
+                                <path d="M14 18 a3,3 0 0,1 6,0 a3,3 0 0,1 6,0 q0,6 -6,9 q-6,-3 -6,-9 z" transform="translate(5, 3) scale(0.7)" fill="#ef4444"/>
+                                <path d="M14 18 a3,3 0 0,1 6,0 a3,3 0 0,1 6,0 q0,6 -6,9 q-6,-3 -6,-9 z" transform="translate(16, 3) scale(0.7)" fill="#ef4444"/>
+                                <path d="M 16 34 A 10 10 0 0 0 34 34" fill="none" stroke="#4a5568" stroke-width="2.5" stroke-linecap="round"/>
+                            </g>
+
+                            <!-- Angry (Kızgın) -->
+                            <g transform="translate(285, 235)">
+                                <circle cx="25" cy="25" r="24" fill="#fca5a5" />
+                                <path d="M 12 18 L 20 22 M 20 18 L 12 22" stroke="#4a5568" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M 38 18 L 30 22 M 30 18 L 38 22" stroke="#4a5568" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M 16 34 A 10 10 0 0 1 34 34" fill="none" stroke="#4a5568" stroke-width="2.5" stroke-linecap="round"/>
+                            </g>
+
+                            <!-- Sad (Üzgün) -->
+                            <g transform="translate(175, 305)">
+                                <circle cx="25" cy="25" r="24" fill="#bfdbfe" />
+                                <circle cx="16" cy="22" r="2.5" fill="#4a5568"/>
+                                <circle cx="34" cy="22" r="2.5" fill="#4a5568"/>
+                                <path d="M 16 36 A 10 10 0 0 1 34 36" fill="none" stroke="#4a5568" stroke-width="2.5" stroke-linecap="round"/>
+                            </g>
+
+                            <!-- Scared (Korkmuş) -->
+                            <g transform="translate(65, 235)">
+                                <circle cx="25" cy="25" r="24" fill="#a7f3d0" />
+                                <circle cx="16" cy="20" r="3" fill="#4a5568"/>
+                                <circle cx="34" cy="20" r="3" fill="#4a5568"/>
+                                <ellipse cx="25" cy="34" rx="7" ry="4" fill="#4a5568"/>
+                            </g>
+
+                            <!-- Surprised (Şaşkın) -->
+                            <g transform="translate(65, 115)">
+                                <circle cx="25" cy="25" r="24" fill="#d8b4fe" />
+                                <circle cx="16" cy="20" r="3" fill="#4a5568"/>
+                                <circle cx="34" cy="20" r="3" fill="#4a5568"/>
+                                <ellipse cx="25" cy="35" rx="5" ry="7" fill="#4a5568"/>
+                            </g>
+
+                            <!-- Çark İşaretçisi -->
+                            <path d="M 190 0 L 210 0 L 200 50 Z" fill="#4a5568" />
+                        </svg>
+                    </div>
+                </div>
             </div>
-        </nav>
-    </header>
-
-    <div class="container mx-auto p-4 md:p-8 max-w-2xl">
-
-        <header class="text-center mb-8">
-            <h1 class="text-4xl font-bold text-blue-800">MentalAI+</h1>
-            <p class="text-lg text-gray-600 mt-2">Yapay Zekâ Destekli Duygu Günlüğün</p>
-        </header>
-
-        <main class="bg-white p-6 rounded-2xl shadow-lg">
-            <form id="daily-summary-form">
-
-                <div class="mb-4">
-                    <label for="user_id" class="block text-sm font-medium text-gray-700 mb-1">Kullanıcı ID</label>
-                    <input type="text" id="user_id" name="user_id" class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Örn: kullanici123" required>
-                </div>
-
-                <div class="mb-6">
-                    <label for="diary_text" class="block text-sm font-medium text-gray-700 mb-1">Bugün nasıl hissediyorsun?</label>
-                    <textarea id="diary_text" name="diary_text" rows="5" class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Bugün işte çok yoruldum, sunum iyi geçti ama başım ağrıyor..." required></textarea>
-                </div>
-
-                <h3 class="text-lg font-semibold mb-3 text-gray-800 border-b pb-2">Günlük Alışkanlıkların</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-                    <div>
-                        <label for="sleep_hours" class="block text-sm font-medium text-gray-700">Uyku (saat)</label>
-                        <input type="number" step="0.5" id="sleep_hours" name="sleep_hours" class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm" value="7.5" required>
-                    </div>
-                    <div>
-                        <label for="water_glasses" class="block text-sm font-medium text-gray-700">Su (bardak)</label>
-                        <input type="number" id="water_glasses" name="water_glasses" class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm" value="8" required>
-                    </div>
-                    <div>
-                        <label for="screen_time_hours" class="block text-sm font-medium text-gray-700">Ekran (saat)</label>
-                        <input type="number" step="0.5" id="screen_time_hours" name="screen_time_hours" class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm" value="5" required>
-                    </div>
-                    <div>
-                        <label for="coffee_cups" class="block text-sm font-medium text-gray-700">Kahve (fincan)</label>
-                        <input type="number" id="coffee_cups" name="coffee_cups" class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm" value="2" required>
-                    </div>
-                    <div>
-                        <label for="exercise_minutes" class="block text-sm font-medium text-gray-700">Egzersiz (dk)</label>
-                        <input type="number" id="exercise_minutes" name="exercise_minutes" class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm" value="30" required>
-                    </div>
-                </div>
-
-                <button type="submit" id="submit-button" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-300">
-                    Günü Özetle
-                </button>
-            </form>
-        </main>
-
-        <div id="loading-indicator" class="text-center mt-6 hidden">
-            <p class="text-lg text-gray-600">Yapay zekâ senin için düşünüyor...</p>
-            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mt-2"></div>
         </div>
+    </section>
 
-        <div id="error-message" class="mt-6 p-4 bg-red-100 text-red-700 rounded-lg hidden"></div>
+    <!-- ... Sayfanın geri kalanı aynı ... -->
 
-        <div id="result-container" class="mt-8 bg-white p-6 rounded-2xl shadow-lg hidden">
-            <h2 class="text-2xl font-bold text-blue-800 mb-4 border-b pb-2">Günün Özeti</h2>
-            <div id="result-content" class="result-card space-y-4 text-gray-700">
+    <script src="nav.js?v=1.0"></script>
+    <script src="script.js?v=1.2"></script>
+</body>
+</html>
+
+
+
+    <!-- Nasıl Çalışır? Bölümü -->
+    <section class="py-16 pt-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">3 Basit Adımda Zihinsel Yolculuğun</h2>
+                <p class="text-gray-600 mt-4">Uygulamayı kullanmak işte bu kadar kolay.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center">
+                <div class="step-card">
+                    <div class="text-5xl mb-4">✍️</div>
+                    <h3 class="text-xl font-bold mb-2">Yaz & Paylaş</h3>
+                    <p class="text-gray-600">Sadece 60 saniyede hislerini ve günlük alışkanlıklarını (uyku, su, kahve vb.) bizimle paylaş.</p>
+                </div>
+                <div class="step-card">
+                    <div class="text-5xl mb-4">🧠</div>
+                    <h3 class="text-xl font-bold mb-2">Yapay Zekâ Analiz Etsin</h3>
+                    <p class="text-gray-600">Gelişmiş yapay zekâ modelimiz, yazdıklarını okuyarak baskın duygu durumunu anlar ve aradaki gizli bağlantıları keşfeder.</p>
+                </div>
+                <div class="step-card">
+                    <div class="text-5xl mb-4">✨</div>
+                    <h3 class="text-xl font-bold mb-2">İçgörü Kazan & Motive Ol</h3>
+                    <p class="text-gray-600">Sana özel hazırlanan analizleri, kişisel koç yorumlarını ve motivasyon kartlarını alarak zihinsel sağlığın için bir adım at.</p>
+                </div>
             </div>
         </div>
+    </section>
 
-    </div>
+    <!-- Özellikler Bölümü -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Sana Özel Tasarlandı</h2>
+                <p class="text-gray-600 mt-4">MentalAI+'ın gücünü keşfet.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="feature-card">
+                    <h3 class="text-xl font-bold mb-2">Akıllı Duygu Analizi</h3>
+                    <p>Yazdığın metinlerden sadece kelimeleri değil, satır aralarındaki duyguları da anlıyoruz. Gemini AI ile 'mutlu', 'yorgun' veya 'kaygılı' gibi ruh hallerini hassas bir şekilde tespit ediyoruz.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="text-xl font-bold mb-2">Metrik-Ruh Hali İlişkisi</h3>
+                    <p>Uykusuz bir gecenin ardından neden daha stresli olduğunu hiç merak ettin mi? Uygulamamız, bu metrikler ve duyguların arasındaki ilişkiyi sana özel grafiklerle gösterir.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="text-xl font-bold mb-2">Kişiselleştirilmiş Geri Bildirim</h3>
+                    <p>Sadece bir analiz sunmuyoruz. Yapay zekâ koçumuz, bir arkadaş gibi seninle konuşur, gününe özel yorumlar yapar ve daha iyi hissetmen için küçük ama etkili ipuçları verir.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="text-xl font-bold mb-2">Güvenli ve Özel Alan</h3>
+                    <p>Tüm günlüklerin ve verilerin sana özeldir. Güçlü şifreleme ve kimlik doğrulama sistemimizle, zihinsel yolculuğunun tamamen gizli ve güvende olduğundan emin olabilirsin.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- Günlük Giriş Formu Bölümü -->
+    <section id="diary-form-section" class="py-16">
+        <div class="container mx-auto p-4 md:p-8 max-w-2xl">
+            <header class="text-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Günün Nasıl Geçti?</h2>
+                <p class="text-lg text-gray-600 mt-2">Aşağıdaki formu doldurarak ilk özetini al.</p>
+            </header>
+            <main class="bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
+                <form id="daily-summary-form">
+                    <div class="mb-4">
+                        <label for="user_id" class="block text-sm font-medium text-gray-700 mb-1">Kullanıcı ID</label>
+                        <input type="text" id="user_id" name="user_id" class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm" placeholder="Örn: kullanici123" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="diary_text" class="block text-sm font-medium text-gray-700 mb-1">Bugün nasıl hissediyorsun?</label>
+                        <textarea id="diary_text" name="diary_text" rows="5" class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm" placeholder="Bugün işte çok yoruldum..." required></textarea>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3 text-gray-800 border-b pb-2">Günlük Alışkanlıkların</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                        <div>
+                            <label for="sleep_hours" class="block text-sm font-medium text-gray-700">Uyku (saat)</label>
+                            <input type="number" step="0.5" id="sleep_hours" name="sleep_hours" class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg" value="7.5" required>
+                        </div>
+                        <div>
+                            <label for="water_glasses" class="block text-sm font-medium text-gray-700">Su (bardak)</label>
+                            <input type="number" id="water_glasses" name="water_glasses" class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg" value="8" required>
+                        </div>
+                        <div>
+                            <label for="screen_time_hours" class="block text-sm font-medium text-gray-700">Ekran (saat)</label>
+                            <input type="number" step="0.5" id="screen_time_hours" name="screen_time_hours" class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg" value="5" required>
+                        </div>
+                        <div>
+                            <label for="coffee_cups" class="block text-sm font-medium text-gray-700">Kahve (fincan)</label>
+                            <input type="number" id="coffee_cups" name="coffee_cups" class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg" value="2" required>
+                        </div>
+                        <div>
+                            <label for="exercise_minutes" class="block text-sm font-medium text-gray-700">Egzersiz (dk)</label>
+                            <input type="number" id="exercise_minutes" name="exercise_minutes" class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg" value="30" required>
+                        </div>
+                    </div>
+                    <button type="submit" id="submit-button" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700">
+                        Günü Özetle
+                    </button>
+                </form>
+            </main>
+            <div id="loading-indicator" class="text-center mt-6 hidden"></div>
+            <div id="error-message" class="mt-6 p-4 bg-red-100 text-red-700 rounded-lg hidden"></div>
+            <div id="result-container" class="mt-8 bg-white p-6 rounded-2xl shadow-lg hidden">
+                <h2 class="text-2xl font-bold text-blue-800 mb-4 border-b pb-2">Günün Özeti</h2>
+                <div id="result-content" class="result-card space-y-4 text-gray-700"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YENİ: Son Harekete Geçirici Mesaj (Motivasyon Kartı) -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Biraz İlham Almaya Ne Dersin?</h2>
+            <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Bazen tek ihtiyacımız olan doğru bir sözdür. Ruh haline özel veya rastgele bir motivasyon kartı çekerek gününe pozitif bir başlangıç yap.</p>
+            <a href="card.html" class="cta-button mt-8 inline-block bg-amber-500 text-white font-bold text-lg py-4 px-8 rounded-lg hover:bg-amber-600 transition-transform transform hover:scale-105">
+                ✨ Motivasyon Kartını Çek
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center text-gray-400">
+            <p>&copy; 2025 MentalAI+. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="nav.js?v=1.0"></script>
+    <script src="script.js?v=1.3"></script>
 </body>
 </html>

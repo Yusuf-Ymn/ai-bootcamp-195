@@ -33,3 +33,4 @@ app.include_router(history.router)
 @app.get("/")
 def home():
     return {"message": "MentalAI API çalışıyor."}
+

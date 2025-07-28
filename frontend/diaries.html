@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Günlüklerim - MentalAI+</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=1.8">
+</head>
+<body class="bg-gray-50 text-gray-800 pt-20">
+
+    <div id="navbar-placeholder"></div>
+
+    <!-- Ana İçerik -->
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-blue-800">Geçmiş Günlüklerin</h1>
+            <p class="text-lg text-gray-600 mt-2">Duygu ve düşünce yolculuğunu burada takip et.</p>
+        </header>
+        <div class="mb-8 max-w-md mx-auto">
+            <label for="user_id" class="block text-sm font-medium text-gray-700 mb-1">Kayıtlarını görmek için Kullanıcı ID'ni gir:</label>
+            <div class="flex space-x-2">
+                <input type="text" id="user_id" class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm" placeholder="Örn: kullanici123">
+                <button id="fetch-diaries-button" class="bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700">Günlükleri Getir</button>
+            </div>
+        </div>
+        <div id="loading-indicator" class="text-center my-8 hidden"></div>
+        <div id="error-message" class="my-8 p-4 bg-red-100 text-red-700 rounded-lg hidden text-center"></div>
+        <div id="diaries-container" class="space-y-6"></div>
+    </div>
+    <script src="nav.js?v=1.0"></script>
+    <script src="diaries.js?v=1.0"></script>
+</body>
+</html>
