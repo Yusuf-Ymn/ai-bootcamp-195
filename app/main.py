@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pathlib import Path
+from app.routes.analytics import router as analytics_router
 
 from app.routes import cards, summary, diary, metrics, history
 from app.core.database import Base, engine 
@@ -32,6 +33,7 @@ app.include_router(metrics.router)
 app.include_router(cards.router)
 app.include_router(summary.router)
 app.include_router(history.router)
+app.include_router(analytics_router)
 
 # Front-end statik dosyalar
 FRONTEND_DIR = Path(__file__).resolve().parent.parent / "frontend"  # ../frontend
