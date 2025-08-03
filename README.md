@@ -261,5 +261,120 @@ https://github.com/user-attachments/assets/3f149bd8-cd64-4108-9258-db6af355ae7d
 5. 🧑‍🤝‍🧑 Scrum seremonilerinin düzenli şekilde oturtulması
 
 ---
+
 *Hazırlayan : ****Yusuf Yaman**** & ****Ahmet Taha Kartal****
 🗓️ **Tarih:** 20 Temmuz 2025
+
+```
+```
+
+# 🏁 Sprint 3 Raporu – Final Sprint
+
+## 1️⃣ Sprint Notları  
+Bu sprintte kullanıcı girişi, kayıt işlemleri, sesli giriş ve korelasyon analizleri gibi temel özelliklere odaklanıldı.
+Planlanan işlerin tamamına yakını ilerletildi ancak bazı işler in progress olarak kaldı. 
+Eksik kalan kullanıcı giriş sistemi geliştirildi, sesli giriş özelliği entegre edildi. 
+Grafik arayüz geliştirildi, kullanıcı deneyimi iyileştirildi. Tanıtım videosu hazırlanarak jüriye sunuma hazır hale getirildi. Tüm takım üyeleri aktif katkı sağladı.
+
+---
+
+## 2️⃣ Daily Scrum  
+Aktif olarak Whatsapp kullanıldı.
+<img width="678" height="882" alt="Image" src="https://github.com/user-attachments/assets/86c5a723-1fd0-461a-81d6-764a5971ba65" />
+
+---
+
+## 3️⃣ Sprint Board (Jira Screenshot)  
+3 Görev "IN PROGRESS" aşamasında 17 görev ise "Done" aşamasında sprinti tamamladık.
+<img width="743" height="479" alt="Image" src="https://github.com/user-attachments/assets/da635b34-2807-4477-932a-08fae9c48f88" />
+
+---
+
+## 4️⃣ Ürün Durumu: Ekran Görüntüleri  
+<img width="853" height="794" alt="Image" src="https://github.com/user-attachments/assets/27251d35-60be-4f01-a895-5ae62502cde9" />
+
+-
+<img width="1600" height="725" alt="Image" src="https://github.com/user-attachments/assets/1d862a7e-1555-4df5-aaee-f3f77ea110e4" />
+
+-
+<img width="1592" height="795" alt="Image" src="https://github.com/user-attachments/assets/cb023cff-1985-40af-bb9f-483c8410d65e" />
+
+-
+<img width="1600" height="720" alt="Image" src="https://github.com/user-attachments/assets/7394c686-dec4-4688-a152-a6c6e6b52636" />
+
+---
+
+## 5️⃣ Takım ve Katkı Özeti
+
+| İsim                  | Rol                          | Katkısı                                                              |
+|-----------------------|-------------------------------|---------------------------------------------------------------------|
+| Yusuf Yaman           | Product Owner · Backend & AI  | JWT auth, analiz motoru, daily scrum yönetimi, proje yönlendirme    |
+| Ahmet Taha Kartal     | Scrum Master · Tester         | Sprint dokümantasyonu                                               |
+| Muhammed Sefa Akyüz   | Developer (Data)              | Sesli giriş, korelasyon analizi                                     |
+| Dilara Dereli         | Developer (Frontend)          | Front-end geliştirme, geçmiş veriyi getirme (dashboard)             |
+| Abdullah Güven        | Developer (UI)                | Sign-up ve login arayüzleri, kullanıcı akışı                        |
+
+
+---
+
+## 6️⃣ Sprint 3 Review
+
+| Hedef                                     | Durum         | Açıklama                                                        |
+|------------------------------------------|---------------|-----------------------------------------------------------------|
+| Sign-up / Login                          | 🟡 In Progress | Giriş modülü geliştirilmeye devam ediliyor                      |
+| Sesli giriş                              | 🟡 In Progress | Mikrofonla kullanıcı girişi prototipi hazırlanıyor             |
+| Korelasyon analizi                       | 🟡 In Progress | Duygu durumu ile hafta günleri ve su miktarı ilişkisi analiz ediliyor |
+| Frontend iyileştirmeleri                 | 🟡 In Progress | UI düzenlemeleri ve dashboard üzerinde çalışmalar sürüyor       |
+| Tanıtım videosu ve jüriye sunum          | ✅ Tamamlandı | Sesli anlatımlı proje tanıtım videosu hazırlandı               |
+
+
+---
+
+## 7️⃣ Teknik Kazanımlar
+
+- 🔐 JWT tabanlı kullanıcı oturumu
+- 🗣️ Sesli giriş özelliği (mikrofonla)
+- 📈 Korelasyon analizi (duygu/su/gün)
+- 🎨 Tailwind CSS ile responsive tasarım
+- 🎥 Seslendirmeli tanıtım videosu
+
+---
+
+## 8️⃣ Sprint Retrospective
+
+| Sorun                                 | Etki             | Çözüm / Aksiyon                                   |
+|--------------------------------------|------------------|--------------------------------------------------|
+| Zaman baskısı                        | Görev çakışması  | Takım içinde paralel görev yürütüldü             |
+
+---
+
+## 9️⃣ Sprint 3 Backlog Durumu
+
+| #  | Görev                                                                 | SP | Durum         |
+|----|-----------------------------------------------------------------------|----|---------------|
+| 1  | SCRUM-28: Sign-up                                                     | 10 | ✅ Tamamlandı |
+| 2  | SCRUM-29: Login                                                       | 8  | ✅ Tamamlandı |
+| 3  | SCRUM-32: Sign-up/Login için tablo oluşturma                          | 8  | ✅ Tamamlandı |
+| 4  | SCRUM-31: Sesli giriş                                                 | 10 | ✅ Tamamlandı |
+| 5  | SCRUM-33: Korelasyon analizleri (hafta/su/duygu durumu)               | 12 | 🟡 In Progress |
+| 6  | SCRUM-34: Frontend iyileştirmeleri                                    | 10 | 🟡 In Progress |
+
+| 📊 **Toplam SP**: 58 | ✅ **Tamamlanan SP**: 36 | 🔄 **Tamamlanma Oranı**: %62 |
+
+
+---
+
+## 🔟 Final Notlar  
+
+- Projede hedeflerin büyük bölümü başarıyla tamamlandı  
+- Yapay zekâ destekli ve kullanıcı dostu bir uygulama geliştirildi  
+- Sign-up/Login, sesli giriş, korelasyon analizleri gibi temel özellikler uygulamaya entegre edildi  
+- Demo videosu jüriye sunulmaya hazır hale getirildi  
+- Takım çalışması ve teknik gelişim süreci etkili şekilde yürütüldü  
+- Frontend ve korelasyon analizi görevleri son rötuşlar aşamasında (*In Progress*)
+
+---
+
+📅 **Sprint Tarihi:** 27 Temmuz – 3 Ağustos 2025  
+🧠 **Hazırlayanlar:** Yusuf Yaman · Ahmet Taha Kartal
+
