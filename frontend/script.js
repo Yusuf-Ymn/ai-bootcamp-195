@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+
     const form = document.getElementById('daily-summary-form');
     const submitButton = document.getElementById('submit-button');
     const loadingIndicator = document.getElementById('loading-indicator');
@@ -39,6 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', async function(event) {
             event.preventDefault();
 
+            // Kullanıcı girişi kontrolü
+            const user = JSON.parse(localStorage.getItem('user') || 'null');
+            if (!user) {
+                showError("Günlük yazmak için önce giriş yapmalısınız. <a href='/login' class='underline'>Giriş Yap</a>");
+                return;
+            }
+
             resultContainer.classList.add('hidden');
             errorMessage.classList.add('hidden');
             loadingIndicator.innerHTML = `<p class="text-lg text-gray-600">Yapay zekâ senin için düşünüyor...</p><div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mt-2"></div>`;
@@ -50,11 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const formData = new FormData(form);
                 const data = Object.fromEntries(formData.entries());
                 const today = new Date().toISOString().split('T')[0];
-                const userIdValue = data.user_id || '';
-                const userId = userIdValue.trim();
+                const userId = user.user_id || user.id; // Giriş yapan kullanıcının ID'si
 
                 if (!userId) {
-                    throw new Error("Kullanıcı ID alanı boş bırakılamaz veya formda bulunamadı.");
+                    throw new Error("Kullanıcı bilgileri bulunamadı. Lütfen tekrar giriş yapın.");
                 }
 
                 const payload = {

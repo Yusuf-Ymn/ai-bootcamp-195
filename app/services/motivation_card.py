@@ -1,17 +1,17 @@
 import os
+import random
 import google.generativeai as genai
 from dotenv import load_dotenv
 
 load_dotenv()
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
-def generate_motivation_card(emotion: str = None) -> str:
-    model = genai.GenerativeModel(model_name="gemini-1.5-flash")
-
-    prompt = f"""
+# Çeşitli motivasyon kartı prompt şablonları
+MOTIVATION_PROMPTS = [
+    """
     Sen bir dijital motivasyon asistanısın. Aşağıda kullanıcının güncel ruh hali verilmiştir:
 
-    🧠 Ruh hali: {emotion or "bilinmiyor"}
+    🧠 Ruh hali: {emotion}
 
     Görevin:
     1. Bu duyguya uygun, moral verici **tek bir özlü söz** seç. Bu söz bir filozof, yazar, düşünür, bilim insanı veya bir Türk/evrensel atasözü olabilir.
@@ -25,7 +25,51 @@ def generate_motivation_card(emotion: str = None) -> str:
 
     Gereksiz açıklama, markdown, ek bilgi verme. Sadece metin çıktısı ver.  
     Cümlelerin birbirine benzemesin. Kullanıcının moduna göre yaratıcı örnekler üret.
+    """,
+    
     """
+    Motivasyon kartı oluştur:
+
+    Kullanıcının ruh hali: {emotion}
+
+    Talimatlar:
+    - Bu duyguya uygun bir özlü söz bul
+    - Sözün sahibini belirt
+    - Kısa, destekleyici bir yorum ekle
+    - Format:
+      🗣️ "Söz" – Kimden
+      💬 Yorum
+
+    Yaratıcı ve çeşitli ol.
+    """,
+    
+    """
+    Ruh haline özel motivasyon mesajı:
+
+    Duygu durumu: {emotion}
+
+    Görev:
+    1. Uygun bir özlü söz seç
+    2. Kaynağını belirt
+    3. Kişiselleştirilmiş yorum yaz
+
+    Çıktı formatı:
+    🗣️ "Söz" – Kaynak
+    💬 Kişisel yorum
+
+    Farklı ve ilham verici ol.
+    """
+]
+
+def generate_motivation_card(emotion: str = None) -> str:
+    model = genai.GenerativeModel(model_name="gemini-1.5-flash")
+
+    # Emotion değerini güvenli hale getir
+    emotion_text = emotion if emotion else "bilinmiyor"
+    
+    # Rastgele bir prompt şablonu seç
+    selected_prompt = random.choice(MOTIVATION_PROMPTS)
+    prompt = selected_prompt.format(emotion=emotion_text)
 
     try:
         response = model.generate_content([prompt])

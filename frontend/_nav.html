@@ -1,20 +1,27 @@
 <header class="bg-white shadow-md fixed top-0 left-0 right-0 z-10">
     <nav class="container mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
-        <a href="index.html" class="text-xl font-bold text-blue-800">MentalAI+</a>
+        <a href="/" class="text-xl font-bold text-blue-800">MentalAI+</a>
         <div class="flex items-center space-x-4 md:space-x-6">
-            <a href="index.html" class="nav-link"> Ana Sayfa</a>
+            <a href="/" class="nav-link"> Ana Sayfa</a>
             <div class="relative group">
                 <button class="nav-link nav-link-button">
                     <span> Geçmişim</span>
                     <svg class="w-4 h-4 ml-1 text-gray-500 group-hover:text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md pt-2 pb-1 w-36 z-20">
-                    <a href="diaries.html" class="dropdown-link">Günlükler</a>
-                    <a href="analysis.html" class="dropdown-link">Analiz</a>
+                    <a href="/diaries" class="dropdown-link">Günlükler</a>
+                    <a href="/analysis" class="dropdown-link">Analiz</a>
                 </div>
             </div>
-            <a href="card.html" class="nav-link"> Kart Çek</a>
-            <a href="login.html" class="nav-link"> Giriş Yap</a>
+            <a href="/card" class="nav-link"> Kart Çek</a>
+            <div id="auth-buttons">
+                <a href="/login" class="nav-link"> Giriş Yap</a>
+                <a href="/signup" class="nav-link"> Kayıt Ol</a>
+            </div>
+            <div id="user-menu" class="hidden">
+                <span id="username-display" class="text-blue-600 font-medium"></span>
+                <button id="logout-btn" class="nav-link"> Çıkış Yap</button>
+            </div>
         </div>
     </nav>
 </header>

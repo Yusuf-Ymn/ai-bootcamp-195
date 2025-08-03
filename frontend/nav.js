@@ -15,6 +15,30 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Çekilen HTML'i yer tutucunun içine yerleştir
                 navbarPlaceholder.innerHTML = html;
 
+                // Kullanıcı durumunu kontrol et
+                const user = JSON.parse(localStorage.getItem('user') || 'null');
+                const authButtons = navbarPlaceholder.querySelector('#auth-buttons');
+                const userMenu = navbarPlaceholder.querySelector('#user-menu');
+                const usernameDisplay = navbarPlaceholder.querySelector('#username-display');
+                const logoutBtn = navbarPlaceholder.querySelector('#logout-btn');
+
+                if (user && authButtons && userMenu && usernameDisplay && logoutBtn) {
+                    // Kullanıcı giriş yapmış
+                    authButtons.classList.add('hidden');
+                    userMenu.classList.remove('hidden');
+                    usernameDisplay.textContent = user.username;
+                    
+                    // Çıkış butonu işlevi
+                    logoutBtn.addEventListener('click', function() {
+                        localStorage.removeItem('user');
+                        window.location.reload();
+                    });
+                } else if (authButtons && userMenu) {
+                    // Kullanıcı giriş yapmamış
+                    authButtons.classList.remove('hidden');
+                    userMenu.classList.add('hidden');
+                }
+
                 // Navigasyon yüklendikten sonra, aktif linki ayarla
                 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
                 const navLinks = navbarPlaceholder.querySelectorAll('.nav-link');

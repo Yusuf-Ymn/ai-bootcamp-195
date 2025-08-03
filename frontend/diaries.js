@@ -5,6 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadingIndicator = document.getElementById('loading-indicator');
     const errorMessage = document.getElementById('error-message');
 
+    // Kullanıcı giriş yapmışsa ID'yi otomatik doldur
+    const user = JSON.parse(localStorage.getItem('user') || 'null');
+    if (user && (user.user_id || user.id)) {
+        userIdInput.value = user.user_id || user.id;
+    }
+
     fetchButton.addEventListener('click', fetchDiaries);
     userIdInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') fetchDiaries();
@@ -21,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         diariesContainer.innerHTML = '';
 
         try {
+            // Kullanıcı ID'sini string olarak kullan
             const response = await fetch(`http://127.0.0.1:8000/summaries/${userId}`);
             if (response.status === 404) throw new Error('Bu kullanıcı için geçmiş kayıt bulunamadı.');
             if (!response.ok) throw new Error('Geçmiş verileri alınırken bir hata oluştu.');
