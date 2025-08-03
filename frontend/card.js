@@ -6,6 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadingIndicator = document.getElementById('card-loading');
     const errorMessage = document.getElementById('card-error');
 
+    // Kullanıcı giriş yapmışsa ID'yi otomatik doldur
+    const user = JSON.parse(localStorage.getItem('user') || 'null');
+    if (user && (user.user_id || user.id)) {
+        userIdInput.value = user.user_id || user.id;
+    }
+
     fetchButton.addEventListener('click', fetchCard);
 
     async function fetchCard() {
@@ -17,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const userId = userIdInput.value.trim();
         let apiUrl = 'http://127.0.0.1:8000/motivation-card';
         if (userId) {
+            // Kullanıcı ID'sini string olarak kullan
             apiUrl += `?user_id=${userId}`;
         }
 

@@ -1,156 +1,99 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MentalAI+ Günlük Girişi</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MentalAI+ | Duygu Günlüğü ve Kişisel Koç</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=1.3">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css?v=2.2">
 </head>
-<body class="bg-gray-50 text-gray-800 pt-20">
+<body class="bg-gray-50 text-gray-800">
 
-  <!-- HEADER & NAV -->
-  <header class="bg-white shadow-md fixed top-0 left-0 right-0 z-10">
-    <nav class="container mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
-      <a href="index.html" class="text-xl font-bold text-blue-800">MentalAI+</a>
-      <div class="flex space-x-4 md:space-x-6">
-        <a href="index.html" class="nav-link active">🏠 Ana Sayfa</a>
-        <a href="history.html" class="nav-link">🗓️ Geçmişim</a>
-        <a href="card.html" class="nav-link">🃏 Kart Çek</a>
-        <a href="analytics.html" class="nav-link">📊 Analitik</a>
-      </div>
-    </nav>
-  </header>
+    <!-- Navigasyon Menüsü Yer Tutucusu -->
+    <div id="navbar-placeholder"></div>
 
-  <div class="container mx-auto p-4 md:p-8 max-w-2xl">
+    <div class="container mx-auto p-4 md:p-8 max-w-2xl mt-16">
 
-    <header class="text-center mb-8">
-      <h1 class="text-4xl font-bold text-blue-800">MentalAI+</h1>
-      <p class="text-lg text-gray-600 mt-2">Yapay Zekâ Destekli Duygu Günlüğün</p>
-    </header>
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-blue-800">MentalAI+</h1>
+            <p class="text-lg text-gray-600 mt-2">Yapay Zekâ Destekli Duygu Günlüğün</p>
+        </header>
 
-    <main class="bg-white p-6 rounded-2xl shadow-lg">
-      <form id="daily-summary-form">
+        <main class="bg-white p-6 rounded-2xl shadow-lg">
+            <form id="daily-summary-form">
 
-        <!-- Kullanıcı ID -->
-        <div class="mb-4">
-          <label for="user_id" class="block text-sm font-medium text-gray-700 mb-1">
-            Kullanıcı ID
-          </label>
-          <input
-            type="text"
-            id="user_id"
-            name="user_id"
-            class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Örn: kullanici123"
-            required>
-        </div>
+                <!-- Bugün nasıl hissediyorsun? + Mikrofon -->
+                <div class="mb-6">
+                    <label for="diary_text" class="block text-sm font-medium text-gray-700 mb-1">
+                        Bugün nasıl hissediyorsun?
+                    </label>
+                    <div class="relative">
+                        <textarea
+                            id="diary_text"
+                            name="diary_text"
+                            rows="5"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            placeholder="Bugün işte çok yoruldum, sunum iyi geçti ama başım ağrıyor..."
+                            required></textarea>
+                        <button
+                            type="button"
+                            id="mic-btn"
+                            class="absolute right-2 bottom-2 text-2xl"
+                            title="Konuşmayı başlat/durdur">🎤</button>
+                    </div>
+                </div>
 
-        <!-- Bugün nasıl hissediyorsun? + Mikrofon -->
-        <div class="mb-6">
-          <label for="diary_text" class="block text-sm font-medium text-gray-700 mb-1">
-            Bugün nasıl hissediyorsun?
-          </label>
-          <div class="relative">
-            <textarea
-              id="diary_text"
-              name="diary_text"
-              rows="5"
-              class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Bugün işte çok yoruldum, sunum iyi geçti ama başım ağrıyor..."
-              required></textarea>
-            <button
-              type="button"
-              id="mic-btn"
-              class="absolute right-2 bottom-2 text-2xl"
-              title="Konuşmayı başlat/durdur">🎤</button>
-          </div>
-        </div>
+                <!-- Günlük Metrikler -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div>
+                        <label for="sleep_hours" class="block text-sm font-medium text-gray-700 mb-1">😴 Uyku (saat)</label>
+                        <input type="number" id="sleep_hours" name="sleep_hours" min="0" max="24" step="0.5" class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="8.0">
+                    </div>
+                    <div>
+                        <label for="water_glasses" class="block text-sm font-medium text-gray-700 mb-1">💧 Su (bardak)</label>
+                        <input type="number" id="water_glasses" name="water_glasses" min="0" max="20" class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="6">
+                    </div>
+                    <div>
+                        <label for="screen_time_hours" class="block text-sm font-medium text-gray-700 mb-1">📱 Ekran Süresi (saat)</label>
+                        <input type="number" id="screen_time_hours" name="screen_time_hours" min="0" max="24" step="0.5" class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="4.0">
+                    </div>
+                    <div>
+                        <label for="coffee_cups" class="block text-sm font-medium text-gray-700 mb-1">☕ Kahve (kupa)</label>
+                        <input type="number" id="coffee_cups" name="coffee_cups" min="0" max="10" class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="2">
+                    </div>
+                    <div>
+                        <label for="exercise_minutes" class="block text-sm font-medium text-gray-700 mb-1">🏃 Egzersiz (dakika)</label>
+                        <input type="number" id="exercise_minutes" name="exercise_minutes" min="0" max="300" class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="30">
+                    </div>
+                </div>
 
-        <!-- Günlük Alışkanlıklar -->
-        <h3 class="text-lg font-semibold mb-3 text-gray-800 border-b pb-2">Günlük Alışkanlıkların</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-          <div>
-            <label for="sleep_hours" class="block text-sm font-medium text-gray-700">Uyku (saat)</label>
-            <input
-              type="number" step="0.5"
-              id="sleep_hours"
-              name="sleep_hours"
-              class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm"
-              value="7.5"
-              required>
-          </div>
-          <div>
-            <label for="water_glasses" class="block text-sm font-medium text-gray-700">Su (bardak)</label>
-            <input
-              type="number"
-              id="water_glasses"
-              name="water_glasses"
-              class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm"
-              value="8"
-              required>
-          </div>
-          <div>
-            <label for="screen_time_hours" class="block text-sm font-medium text-gray-700">Ekran (saat)</label>
-            <input
-              type="number" step="0.5"
-              id="screen_time_hours"
-              name="screen_time_hours"
-              class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm"
-              value="5"
-              required>
-          </div>
-          <div>
-            <label for="coffee_cups" class="block text-sm font-medium text-gray-700">Kahve (fincan)</label>
-            <input
-              type="number"
-              id="coffee_cups"
-              name="coffee_cups"
-              class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm"
-              value="2"
-              required>
-          </div>
-          <div>
-            <label for="exercise_minutes" class="block text-sm font-medium text-gray-700">Egzersiz (dk)</label>
-            <input
-              type="number"
-              id="exercise_minutes"
-              name="exercise_minutes"
-              class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm"
-              value="30"
-              required>
-          </div>
-        </div>
+                <!-- Gönder Butonu -->
+                <button type="submit" id="submit-btn" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+                    Günü Özetle
+                </button>
+            </form>
 
-        <button
-          type="submit"
-          id="submit-button"
-          class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">
-          Günü Özetle
-        </button>
-      </form>
-    </main>
+            <!-- Yükleme Göstergesi -->
+            <div id="loading-indicator" class="hidden text-center py-8">
+                <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
+                <p class="text-gray-600 mt-2">Yapay zekâ senin için düşünüyor...</p>
+            </div>
 
-    <!-- Loading Indicator -->
-    <div id="loading-indicator" class="text-center mt-6 hidden">
-      <p class="text-lg text-gray-600">Yapay zekâ senin için düşünüyor...</p>
-      <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mt-2"></div>
+            <!-- Hata Mesajı -->
+            <div id="error-message" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg mt-4"></div>
+
+            <!-- Sonuç -->
+            <div id="result-container" class="hidden mt-6 p-4 bg-blue-50 rounded-lg">
+                <h3 class="text-lg font-semibold text-blue-800 mb-3">Günün Özeti</h3>
+                <div id="result-content"></div>
+            </div>
+        </main>
     </div>
 
-    <!-- Hata Mesajı -->
-    <div id="error-message" class="mt-6 p-4 bg-red-100 text-red-700 rounded-lg hidden"></div>
-
-    <!-- Sonuç Kartı -->
-    <div id="result-container" class="mt-8 bg-white p-6 rounded-2xl shadow-lg hidden">
-      <h2 class="text-2xl font-bold text-blue-800 mb-4 border-b pb-2">Günün Özeti</h2>
-       <div id="result-content" class="result-card space-y-4 text-gray-700"></div>
-    </div>
-
-  </div>
-
-  <script src="script.js"></script>
+    <script src="/static/nav.js"></script>
+    <script src="/static/script.js"></script>
 </body>
 </html>
